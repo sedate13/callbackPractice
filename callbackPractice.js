@@ -23,9 +23,12 @@ and what you should write is the sayHi function that makes the code above work,
 // 1. Write a function called first that returns the first item of the array using a callback function
 
   // Code Here
-
+  
+  
+  var first = function (array, cb){cb(array[0])};
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 first(names, function(firstName){
   console.log('The first name in names is ' + firstName);
   return firstName;
@@ -37,7 +40,7 @@ first(names, function(firstName){
 
   //Code Here
 
-
+function last( names,cb){cb(names[names.length-1])}
 
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -50,7 +53,7 @@ last(names, function(lastName){
 
   //Code Here
 
-
+  function multiply (num1,num2,cb){return cb(num1*num2);}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -65,7 +68,7 @@ multiply(4, 3, function(answer){
   //Code Here 
 
 
-
+  function contains (array, str, cb){cb(array.includes(str))}
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -82,7 +85,7 @@ contains(names, 'Colt', function(result){
 
   //Code Here
 
-
+  
 
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -93,7 +96,7 @@ uniq(names, function(uniqArr){
 
     //Code Here 
 
-
+    function each (array,cb){array.forEach(cb) } 
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
